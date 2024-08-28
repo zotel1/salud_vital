@@ -1,7 +1,8 @@
-package med.voll.api.domain.paciente;
+package com.demo.salud_vital.domain.paciente;
 
 
-import med.voll.api.domain.direccion.Direccion;
+import com.demo.salud_vital.domain.direccion.Direccion;
+
 
 public record DatosDetallesPaciente(Long id, String nombre, String email, String documento, String telefono, Direccion direccion) {
 

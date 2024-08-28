@@ -1,11 +1,12 @@
-package med.voll.api.domain.paciente;
+package com.demo.salud_vital.domain.paciente;
 
+import com.demo.salud_vital.domain.direccion.Direccion;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import med.voll.api.domain.direccion.Direccion;
+
 
 
 @Table(name = "pacientes")
@@ -40,7 +41,7 @@ public class Paciente {
         this.direccion = new Direccion(datos.direccion());
     }
 
-    public void actualizarInformacoes(DatosActualizacionPaciente datos) {
+    public void actualizarInformacoes(com.demo.salud_vital.domain.paciente.DatosActualizacionPaciente datos) {
         if (datos.nombre() != null) {
             this.nombre = datos.nombre();
         }

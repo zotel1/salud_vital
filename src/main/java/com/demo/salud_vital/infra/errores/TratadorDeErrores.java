@@ -1,4 +1,4 @@
-package med.voll.api.infra.errores;
+package com.demo.salud_vital.infra.errores;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.ValidationException;

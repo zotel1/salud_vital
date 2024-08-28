@@ -1,12 +1,13 @@
-package med.voll.api.domain.consulta;
+package com.demo.salud_vital.domain.consulta;
 
 
-import med.voll.api.domain.consulta.desafio.ValidadorCancelamientoDeConsulta;
-import med.voll.api.domain.consulta.validaciones.ValidadorDeConsultas;
-import med.voll.api.domain.medico.Medico;
-import med.voll.api.domain.medico.MedicoRepository;
-import med.voll.api.domain.paciente.PacienteRepository;
-import med.voll.api.infra.errores.ValidacionDeIntegridad;
+import com.demo.salud_vital.domain.consulta.desafio.ValidadorCancelamientoDeConsulta;
+import com.demo.salud_vital.domain.consulta.validaciones.ValidadorDeConsultas;
+import com.demo.salud_vital.domain.medico.Medico;
+import com.demo.salud_vital.domain.medico.MedicoRepository;
+import com.demo.salud_vital.domain.paciente.PacienteRepository;
+import com.demo.salud_vital.infra.errores.ValidacionDeIntegridad;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;

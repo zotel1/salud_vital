@@ -1,7 +1,8 @@
-package med.voll.api.domain.consulta.validaciones;
+package com.demo.salud_vital.domain.consulta.validaciones;
 
+import com.demo.salud_vital.domain.consulta.DatosAgendarConsulta;
 import jakarta.validation.ValidationException;
-import med.voll.api.domain.consulta.DatosAgendarConsulta;
+
 import org.springframework.stereotype.Component;
 
 import java.time.DayOfWeek;

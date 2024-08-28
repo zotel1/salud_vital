@@ -1,6 +1,7 @@
-package med.voll.api.domain.consulta.validaciones;
+package com.demo.salud_vital.domain.consulta.validaciones;
 
-import med.voll.api.domain.consulta.DatosAgendarConsulta;
+import com.demo.salud_vital.domain.consulta.DatosAgendarConsulta;
+
 
 public interface ValidadorDeConsultas {
     public void validar(DatosAgendarConsulta datos);

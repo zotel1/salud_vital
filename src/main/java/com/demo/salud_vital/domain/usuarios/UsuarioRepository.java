@@ -1,4 +1,4 @@
-package med.voll.api.domain.usuarios;
+package com.demo.salud_vital.domain.usuarios;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.userdetails.UserDetails;

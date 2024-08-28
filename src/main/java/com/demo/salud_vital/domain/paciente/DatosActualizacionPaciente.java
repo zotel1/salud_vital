@@ -1,7 +1,8 @@
-package med.voll.api.domain.paciente;
+package com.demo.salud_vital.domain.paciente;
 
+import com.demo.salud_vital.domain.direccion.DatosDireccion;
 import jakarta.validation.constraints.NotNull;
-import med.voll.api.domain.direccion.DatosDireccion;
+
 
 public record DatosActualizacionPaciente(
         @NotNull

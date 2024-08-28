@@ -1,7 +1,7 @@
-package med.voll.api.domain.consulta;
+package com.demo.salud_vital.domain.consulta;
 
 import jakarta.validation.constraints.NotNull;
-import med.voll.api.domain.consulta.MotivoCancelamiento;
+
 
 public record DatosCancelamientoConsulta(
         @NotNull

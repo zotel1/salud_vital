@@ -1,6 +1,7 @@
-package med.voll.api.domain.medico;
+package com.demo.salud_vital.domain.medico;
 
-import med.voll.api.domain.direccion.DatosDireccion;
+import com.demo.salud_vital.domain.direccion.DatosDireccion;
+
 
 public record DatosRespuestaMedico(Long id, String nombre, String email, String telefono, String documento,
                                    DatosDireccion direccion) {

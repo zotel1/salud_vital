@@ -1,8 +1,9 @@
-package med.voll.api.domain.consulta;
+package com.demo.salud_vital.domain.consulta;
 
+import com.demo.salud_vital.domain.medico.Especialidad;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
-import med.voll.api.domain.medico.Especialidad;
+
 
 import java.time.LocalDateTime;
 

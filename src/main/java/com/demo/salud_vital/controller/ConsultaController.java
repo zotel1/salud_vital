@@ -1,16 +1,15 @@
-package med.voll.api.controller;
+package com.demo.salud_vital.controller;
 
+import com.demo.salud_vital.domain.consulta.AgendaDeConsultaService;
+import com.demo.salud_vital.domain.consulta.DatosAgendarConsulta;
+import com.demo.salud_vital.domain.consulta.DatosCancelamientoConsulta;
+import com.demo.salud_vital.domain.consulta.DatosDetalleConsulta;
+import com.demo.salud_vital.infra.errores.ValidacionDeIntegridad;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 import jakarta.validation.Valid;
 
-import med.voll.api.domain.consulta.AgendaDeConsultaService;
-import med.voll.api.domain.consulta.DatosAgendarConsulta;
-import med.voll.api.domain.consulta.DatosCancelamientoConsulta;
-import med.voll.api.domain.consulta.DatosDetalleConsulta;
-
-import med.voll.api.infra.errores.ValidacionDeIntegridad;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,6 +28,7 @@ public class ConsultaController {
 
     @Autowired
     private AgendaDeConsultaService service;
+
     @GetMapping
     @Operation(summary = "Obtiene el listado de consultas")
     public ResponseEntity<Page<DatosDetalleConsulta>> listar(@PageableDefault(size = 10, sort = {"fecha"}) Pageable paginacion) {

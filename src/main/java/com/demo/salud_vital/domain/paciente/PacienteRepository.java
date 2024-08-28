@@ -1,4 +1,4 @@
-package med.voll.api.domain.paciente;
+package com.demo.salud_vital.domain.paciente;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

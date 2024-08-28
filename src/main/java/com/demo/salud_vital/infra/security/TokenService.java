@@ -1,11 +1,12 @@
-package med.voll.api.infra.security;
+package com.demo.salud_vital.infra.security;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import med.voll.api.domain.usuarios.Usuario;
+import com.demo.salud_vital.domain.usuarios.Usuario;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 

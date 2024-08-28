@@ -1,6 +1,7 @@
-package med.voll.api.infra.security;
+package com.demo.salud_vital.infra.security;
 
-import med.voll.api.domain.usuarios.UsuarioRepository;
+import com.demo.salud_vital.domain.usuarios.UsuarioRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,4 +1,4 @@
-package med.voll.api.domain.direccion;
+package com.demo.salud_vital.domain.direccion;
 
 import jakarta.validation.constraints.NotBlank;
 

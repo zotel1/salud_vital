@@ -1,11 +1,12 @@
-package med.voll.api.controller;
+package com.demo.salud_vital.controller;
 
 
 
+import com.demo.salud_vital.domain.paciente.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
-import med.voll.api.domain.paciente.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.data.domain.Page;
@@ -46,7 +47,7 @@ public class PacienteController {
     @PutMapping
     @Transactional
     @Operation(summary = "Actualiza las informaciones para el paciente")
-    public ResponseEntity actualizar(@RequestBody @Valid DatosActualizacionPaciente datos) {
+    public ResponseEntity actualizar(@RequestBody @Valid com.demo.salud_vital.domain.paciente.DatosActualizacionPaciente datos) {
         var paciente = repository.getReferenceById(datos.id());
         paciente.actualizarInformacoes(datos);
 

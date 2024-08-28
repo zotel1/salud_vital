@@ -1,5 +1,7 @@
-package med.voll.api.controller;
+package com.demo.salud_vital.controller;
 
+import com.demo.salud_vital.domain.direccion.DatosDireccion;
+import com.demo.salud_vital.domain.medico.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
@@ -27,10 +29,10 @@ public class MedicoController {
     @PostMapping
     @Transactional
     @Operation(summary = "Registra un nuevo medico en la base de datos")
-    public ResponseEntity<DatosRespuestaMedico> registrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico,
-                                                                UriComponentsBuilder uriComponentsBuilder) {
+    public ResponseEntity<com.demo.salud_vital.domain.medico.DatosRespuestaMedico> registrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico,
+                                                                                           UriComponentsBuilder uriComponentsBuilder) {
         Medico medico = medicoRepository.save(new Medico(datosRegistroMedico));
-        DatosRespuestaMedico datosRespuestaMedico = new DatosRespuestaMedico(medico.getId(), medico.getNombre(), medico.getEmail(),
+        com.demo.salud_vital.domain.medico.DatosRespuestaMedico datosRespuestaMedico = new DatosRespuestaMedico(medico.getId(), medico.getNombre(), medico.getEmail(),
                 medico.getTelefono(), medico.getEspecialidad().toString(),
                 new DatosDireccion(medico.getDireccion().getCalle(), medico.getDireccion().getDistrito(),
                         medico.getDireccion().getCiudad(), medico.getDireccion().getNumero(),

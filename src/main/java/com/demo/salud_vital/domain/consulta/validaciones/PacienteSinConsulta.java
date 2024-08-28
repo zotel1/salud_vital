@@ -1,8 +1,9 @@
-package med.voll.api.domain.consulta.validaciones;
+package com.demo.salud_vital.domain.consulta.validaciones;
 
+import com.demo.salud_vital.domain.consulta.ConsultaRepository;
+import com.demo.salud_vital.domain.consulta.DatosAgendarConsulta;
 import jakarta.validation.ValidationException;
-import med.voll.api.domain.consulta.ConsultaRepository;
-import med.voll.api.domain.consulta.DatosAgendarConsulta;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

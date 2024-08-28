@@ -1,4 +1,4 @@
-package med.voll.api.domain.usuarios;
+package com.demo.salud_vital.domain.usuarios;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

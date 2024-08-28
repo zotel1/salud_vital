@@ -1,4 +1,4 @@
-package med.voll.api.infra.springdoc;
+package com.demo.salud_vital.infra.springdoc;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
