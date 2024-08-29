@@ -19,7 +19,7 @@ import java.net.URI;
 
 @RestController
 @RequestMapping("/medicos")
-@SecurityRequirement(name = "bearer-key")
+//@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
 
     @Autowired
