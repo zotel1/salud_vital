@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @ResponseBody
 //@RequestMapping(value = "/api/client/consultas", produces = MediaType.APPLICATION_JSON_VALUE)
-@RequestMapping(value = "/consultas", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/api/client/consultas", produces = MediaType.APPLICATION_JSON_VALUE)
 
 //@SecurityRequirement(name = "bearer-key")
 @SuppressWarnings("all")
