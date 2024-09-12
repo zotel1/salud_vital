@@ -2,7 +2,8 @@ spring:
   profile.active: default
   datasource:
     url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}
-    username: root
+    #username: root
+    username: ${DB_NAME}
     #password: ${DB_PSWCAC}  # Variable de entorno para la contraseña de la DB
     password: ${DB_PASSWORD}
   jpa:
