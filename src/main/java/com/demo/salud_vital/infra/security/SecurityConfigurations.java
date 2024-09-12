@@ -34,7 +34,7 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @EnableMethodSecurity
 public class SecurityConfigurations {
 
-    @Value("${auth0.audience")
+    @Value("${AUTH0_AUDIENCE")
     private String audience;
 
     @Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri")
