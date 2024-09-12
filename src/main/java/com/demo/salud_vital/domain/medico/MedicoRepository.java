@@ -15,7 +15,7 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
 
     @Query("""
             select m from Medico m
-            where m.activo= 1 
+            where m.activo = 1 
             and
             m.especialidad=:especialidad 
             and
@@ -27,7 +27,7 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
             order by rand()
             limit 1
             """)
-    Medico seleccionarMedicoConEspecialidadEnFecha(Especialidad especialidad, LocalDateTime fecha);
+    Page<Medico> seleccionarMedicoConEspecialidadEnFecha(Especialidad especialidad, LocalDateTime fecha);
 
 
     @Query("""
