@@ -26,6 +26,7 @@ server:
   #  secret: ${JWT_SECRET:123456}  # Variable de entorno para JWT secret con valor por defecto
 
 auth0:
+  domain: ${DOMAIN_AUTH0}
   audience: ${AUTH0_AUDIENCE}  # Variable de entorno para el audience de Auth0
 
 flyway:
