@@ -1,5 +1,7 @@
 package com.demo.salud_vital.domain.medico;
 
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -38,4 +40,6 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
             where m.id=:idMedico
             """)
     Boolean findActivoById(Long idMedico);
+
+    Medico seleccionarMedicoConEspecialidadEnFecha(Especialidad especialidad, @NotNull @Future LocalDateTime fecha);
 }
