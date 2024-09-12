@@ -12,6 +12,7 @@ public record DatosAgendarConsulta(
         @NotNull
         Long idPaciente,
         Long idMedico,
+        String name,
         @NotNull
         @Future
         LocalDateTime fecha,
