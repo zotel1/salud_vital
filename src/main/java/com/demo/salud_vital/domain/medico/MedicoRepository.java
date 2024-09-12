@@ -10,28 +10,26 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
 
 @Repository
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
     Page<Medico> findByActivoTrue(Pageable paginacion);
 
 
-//    @Query("""
-  //          select m from Medico m
-    //        where m.activo = 1
-      //      and
-        //    m.especialidad=:especialidad
-//            and
-  //          m.id not in(
-    //            select c.medico.id from Consulta c
-      //          where
-        //        c.fecha=:fecha
-   //         )
-     //       order by rand()
-    //        limit 1
-     //       """)
-  //  Medico seleccionarMedicoConEspecialidadEnFecha(Especialidad especialidad, LocalDateTime fecha);
-//    Page<Medico> seleccionarMedicoConEspecialidadEnFecha(Especialidad especialidad, LocalDateTime fecha);
+    // @Query("""
+    //     select m from Medico m
+    //     where m.activo= 1
+    //    and m.especialidad = :especialidad
+    //    and m.id not in (
+    //       select c.medico.id from Consulta c
+    //       where c.fecha = :fecha
+    //   )
+    //    order by function('rand')
+    //    """)
+    // Medico seleccionarMedicoConEspecialidadEnFecha(Especialidad especialidad, LocalDateTime fecha);
 
 
     @Query("""
@@ -41,5 +39,12 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
             """)
     Boolean findActivoById(Long idMedico);
 
-    Medico seleccionarMedicoConEspecialidadEnFecha(Especialidad especialidad, @NotNull @Future LocalDateTime fecha);
+    @Query("""
+            select m
+            from Medico m
+            where m.especialidad=:especialidad
+            """)
+    List<Medico> findByEspecialidad(Especialidad especialidad);
+
+    Optional<Medico> findById(Long id);
 }
