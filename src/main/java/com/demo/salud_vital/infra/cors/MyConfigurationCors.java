@@ -23,7 +23,7 @@ public class MyConfigurationCors {
 
                 registry.addMapping("/**")
                         .allowedOrigins(allowedOrigins)
-                        .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH")
+                        .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH", "OPTIONS") // Asegúrate de incluir OPTIONS
                         .allowedHeaders("*")
                         .allowCredentials(true); // Si necesitas permitir credenciales
             }
