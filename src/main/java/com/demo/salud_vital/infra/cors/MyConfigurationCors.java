@@ -15,9 +15,17 @@ public class MyConfigurationCors {
 
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+                String allowedOrigins = System.getenv("CORS_ALLOWED_ORIGINS");
+
+                if (allowedOrigins == null || allowedOrigins.isEmpty()) {
+                    allowedOrigins = "*"; // Permitir todos los orígenes si no está configurado
+                }
+
                 registry.addMapping("/**")
-                        .allowedOrigins(System.getenv("CORS_ALLOWED_ORIGINS")) // Asegúrate de que esta variable esté configurada
-                        .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH");
+                        .allowedOrigins(allowedOrigins)
+                        .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH")
+                        .allowedHeaders("*")
+                        .allowCredentials(true); // Si necesitas permitir credenciales
             }
         };
     }
