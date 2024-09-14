@@ -19,9 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-//@RequestMapping(path = "/api/public/medicos", produces = MediaType.APPLICATION_JSON_VALUE)
-@CrossOrigin(origins = "${CORS_ALLOWED_ORIGINS}")
-@RequestMapping(path = "/medicos", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping("/medicos")
 //@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
 
@@ -31,10 +29,10 @@ public class MedicoController {
     @PostMapping
     @Transactional
     @Operation(summary = "Registra un nuevo medico en la base de datos")
-    public ResponseEntity<com.demo.salud_vital.domain.medico.DatosRespuestaMedico> registrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico,
-                                                                                           UriComponentsBuilder uriComponentsBuilder) {
+    public ResponseEntity<DatosRespuestaMedico> registrarMedico(@RequestBody @Valid DatosRegistroMedico datosRegistroMedico,
+                                                                UriComponentsBuilder uriComponentsBuilder) {
         Medico medico = medicoRepository.save(new Medico(datosRegistroMedico));
-        com.demo.salud_vital.domain.medico.DatosRespuestaMedico datosRespuestaMedico = new DatosRespuestaMedico(medico.getId(), medico.getNombre(), medico.getEmail(),
+        DatosRespuestaMedico datosRespuestaMedico = new DatosRespuestaMedico(medico.getId(), medico.getNombre(), medico.getEmail(),
                 medico.getTelefono(), medico.getEspecialidad().toString(),
                 new DatosDireccion(medico.getDireccion().getCalle(), medico.getDireccion().getDistrito(),
                         medico.getDireccion().getCiudad(), medico.getDireccion().getNumero(),

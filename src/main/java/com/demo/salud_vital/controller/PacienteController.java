@@ -19,8 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-@RequestMapping(value = "/pacientes", produces = MediaType.APPLICATION_JSON_VALUE)
-@CrossOrigin(origins = "${CORS_ALLOWED_ORIGINS}")
+@RequestMapping("/pacientes")
 //@SecurityRequirement(name = "bearer-key")
 @SuppressWarnings("all")
 public class PacienteController {
@@ -39,13 +38,6 @@ public class PacienteController {
         return ResponseEntity.created(uri).body(new DatosDetallesPaciente(paciente));
     }
 
-    //@GetMapping
-    //@Operation(summary = "Obtiene el listado para los pacientes")
-   // public ResponseEntity<Page<DatosListaPaciente>> listar(@PageableDefault(size = 10, sort = {"nombre"}) Pageable paginacion) {
-     //   var page = repository.findAllByActivoTrue(paginacion).map(DatosListaPaciente::new);
-       // return ResponseEntity.ok(page);
-    //}
-
     @GetMapping
     @Operation(summary = "Obtiene el listado para los pacientes")
     public ResponseEntity<Page<DatosListaPaciente>> listar(@PageableDefault(size = 10, sort = {"nombre"}) Pageable paginacion) {
@@ -56,7 +48,7 @@ public class PacienteController {
     @PutMapping
     @Transactional
     @Operation(summary = "Actualiza las informaciones para el paciente")
-    public ResponseEntity actualizar(@RequestBody @Valid com.demo.salud_vital.domain.paciente.DatosActualizacionPaciente datos) {
+    public ResponseEntity actualizar(@RequestBody @Valid DatosActualizacionPaciente datos) {
         var paciente = repository.getReferenceById(datos.id());
         paciente.actualizarInformacoes(datos);
 
@@ -82,4 +74,3 @@ public class PacienteController {
 
 
 }
-

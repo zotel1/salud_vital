@@ -20,21 +20,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
-@ResponseBody
-//@RequestMapping(value = "/api/client/consultas", produces = MediaType.APPLICATION_JSON_VALUE)
-@CrossOrigin(origins = "${CORS_ALLOWED_ORIGINS}")
-@RequestMapping(value = "/consultas", produces = MediaType.APPLICATION_JSON_VALUE)
-
-//@SecurityRequirement(name = "bearer-key")
-@SuppressWarnings("all")
+@RestController
+@RequestMapping("/consultas")
 public class ConsultaController {
 
     @Autowired
     private AgendaDeConsultaService service;
 
     @GetMapping
-    @Operation(summary = "Obtiene el listado de consultas")
     public ResponseEntity<Page<DatosDetalleConsulta>> listar(@PageableDefault(size = 10, sort = {"fecha"}) Pageable paginacion) {
         var response = service.consultar(paginacion);
         return ResponseEntity.ok(response);
@@ -42,24 +35,15 @@ public class ConsultaController {
 
     @PostMapping
     @Transactional
-    @Operation(
-            summary = "registra una consulta en la base de datos",
-            description = "",
-            tags = { "consulta", "post" })
-    public ResponseEntity agendar(@RequestBody @Valid DatosAgendarConsulta datos) throws ValidacionDeIntegridad {
+    public ResponseEntity<DatosDetalleConsulta> agendar(@RequestBody @Valid DatosAgendarConsulta datos) throws ValidacionDeIntegridad {
         var response = service.agendar(datos);
         return ResponseEntity.ok(response);
     }
 
     @DeleteMapping
     @Transactional
-    @Operation(
-            summary = "cancela una consulta de la agenda",
-            description = "requiere motivo",
-            tags = { "consulta", "delete" })
-    public ResponseEntity cancelar(@RequestBody @Valid DatosCancelamientoConsulta dados) {
-        service.cancelar(dados);
+    public ResponseEntity<Void> cancelar(@RequestBody @Valid DatosCancelamientoConsulta datos) {
+        service.cancelar(datos);
         return ResponseEntity.noContent().build();
     }
-
 }
