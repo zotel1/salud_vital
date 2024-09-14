@@ -61,7 +61,8 @@ public class SecurityConfigurations {
                                 .requestMatchers("/**").permitAll()
                                  .requestMatchers("/login").permitAll()
                                  .requestMatchers("/consultas/**").permitAll()
-                                 .requestMatchers("/consultas/**").permitAll()
+                                 .requestMatchers("/medicos/**").permitAll()
+                                .requestMatchers("/pacientes/**").permitAll()
                                 .anyRequest().authenticated()
                         )
                 .oauth2ResourceServer(oAuth2ResourceServer ->
