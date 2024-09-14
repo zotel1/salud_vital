@@ -16,7 +16,7 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}  # Variable de entorno CORS para issuer-uri
+          issuer-uri: ${ISSUER_URI}  # Variable de entorno CORS para issuer-uri
 
 server:
   error:
