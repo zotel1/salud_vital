@@ -40,7 +40,8 @@ public class SecurityConfigurations {
     @Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}")
     private String issuer;
 
-    @Value("${CORS_ALLOWED_ORIGINS}")
+   // @Value("${CORS_ALLOWED_ORIGINS}")
+   @Value("http://localhost:5173")
     private String corsAllowedOrigins;
 
     @Value("${spring.websecurity.debug:false}")
@@ -53,10 +54,14 @@ public class SecurityConfigurations {
                 .cors(withDefaults()) // por defecto spring va a buscar un bean con el nombre "corsConfigurationSource"
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .requestMatchers("/api/public/**").permitAll()
-                                .requestMatchers("/login").permitAll()
-                                .requestMatchers("/api/admin/**").hasAuthority("administrador")
-                                .requestMatchers("/api/client/**").hasAuthority("cliente")
+                               // .requestMatchers("/api/public/**").permitAll()
+                               // .requestMatchers("/login").permitAll()
+                               // .requestMatchers("/api/admin/**").hasAuthority("administrador")
+                               // .requestMatchers("/api/client/**").hasAuthority("cliente")
+                                .requestMatchers("/**").permitAll()
+                                 .requestMatchers("/login").permitAll()
+                                 .requestMatchers("/consultas/**").permitAll()
+                                 .requestMatchers("/consultas/**").permitAll()
                                 .anyRequest().authenticated()
                         )
                 .oauth2ResourceServer(oAuth2ResourceServer ->

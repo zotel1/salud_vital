@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
-@RequestMapping(value = "/api/client/pacientes", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = "/pacientes", produces = MediaType.APPLICATION_JSON_VALUE)
 //@SecurityRequirement(name = "bearer-key")
 @SuppressWarnings("all")
 public class PacienteController {

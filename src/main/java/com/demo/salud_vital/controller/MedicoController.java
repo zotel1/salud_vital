@@ -19,7 +19,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping(path = "/api/public/medicos", produces = MediaType.APPLICATION_JSON_VALUE)
+//@RequestMapping(path = "/api/public/medicos", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(path = "/medicos", produces = MediaType.APPLICATION_JSON_VALUE)
 //@SecurityRequirement(name = "bearer-key")
 public class MedicoController {
 
