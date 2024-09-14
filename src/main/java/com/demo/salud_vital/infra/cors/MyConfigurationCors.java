@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Value;
 @Configuration
 public class MyConfigurationCors {
 
-    @Value("${web.cors.allowed-origins}")
+    @Value("${CORS_ALLOWED_ORIGINS}")
     private String allowedOrigins;
 
     @Bean
