@@ -20,6 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping(value = "/pacientes", produces = MediaType.APPLICATION_JSON_VALUE)
+@CrossOrigin(origins = "${CORS_ALLOWED_ORIGINS}")
 //@SecurityRequirement(name = "bearer-key")
 @SuppressWarnings("all")
 public class PacienteController {

@@ -20,6 +20,7 @@ import java.net.URI;
 
 @RestController
 //@RequestMapping(path = "/api/public/medicos", produces = MediaType.APPLICATION_JSON_VALUE)
+@CrossOrigin(origins = "${CORS_ALLOWED_ORIGINS}")
 @RequestMapping(path = "/medicos", produces = MediaType.APPLICATION_JSON_VALUE)
 //@SecurityRequirement(name = "bearer-key")
 public class MedicoController {

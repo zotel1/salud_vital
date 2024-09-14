@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @ResponseBody
 //@RequestMapping(value = "/api/client/consultas", produces = MediaType.APPLICATION_JSON_VALUE)
+@CrossOrigin(origins = "${CORS_ALLOWED_ORIGINS}")
 @RequestMapping(value = "/consultas", produces = MediaType.APPLICATION_JSON_VALUE)
 
 //@SecurityRequirement(name = "bearer-key")
